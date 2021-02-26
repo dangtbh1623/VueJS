@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{ res.title }}</h3>
-        <base-button>Delete</base-button>
+        <base-button @click="remRes(res.id)">Delete</base-button>
       </header>
       <p>{{ res.description }}</p>
       <nav>
@@ -18,6 +18,12 @@ import BaseButton from '../UI/BaseButton.vue';
 export default {
   components: { BaseButton },
   props: ['res'],
+  inject: ['remRes'],
+  methods: {
+    getID(id) {
+      console.log(id);
+    },
+  },
 };
 </script>
 
