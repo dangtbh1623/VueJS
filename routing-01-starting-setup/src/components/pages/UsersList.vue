@@ -1,4 +1,5 @@
 <template>
+<div>
   <button @click="confirmInput">Button</button>
   <button @click="saveFormula">Save</button>
   <ul>
@@ -9,6 +10,7 @@
       :role="user.role"
     ></user-item>
   </ul>
+</div>
 </template>
 
 <script>

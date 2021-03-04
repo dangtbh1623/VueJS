@@ -1,4 +1,5 @@
 <template>
+<div>
 <router-view></router-view>
   <ul>
     <teams-item
@@ -9,6 +10,7 @@
       :member-count="team.members.length"
     ></teams-item>
   </ul>
+</div>
 </template>
 
 <script>
