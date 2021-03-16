@@ -6,6 +6,7 @@ export default {
     namespaced: true,
     state() {
         return {
+            lastFetch: null,
             coaches: [
                 {
                     id: 'c1',
@@ -17,7 +18,7 @@ export default {
                     hourlyRate: 40
                 },
                 {
-                    id: 'c2',   
+                    id: 'c2',
                     firstName: 'Julie',
                     lastName: 'Jones',
                     areas: ['frontend', 'career'],

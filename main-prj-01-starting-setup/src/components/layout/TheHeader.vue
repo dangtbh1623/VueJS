@@ -4,11 +4,22 @@
       <h1><router-link to="/">Find a Coach</router-link></h1>
       <ul>
         <li><router-link to="/coaches">All Coaches</router-link></li>
-        <li><router-link to="/requests">Request</router-link></li>
+        <li v-if="isLogedIn"><router-link to="/requests">Request</router-link></li>
+        <li v-else><router-link to="/auth">LogIn</router-link></li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    isLogedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
+};
+</script>
 
 <style scoped>
 header {
