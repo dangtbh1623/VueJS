@@ -9,7 +9,8 @@ export default {
             hourlyRate: data.rate,
         };
 
-        const response = await fetch(`https://vuejs-dang-app-default-rtdb.firebaseio.com/coaches/${id}.json`, {
+        const token = context.rootGetters.getToken;
+        const response = await fetch(`https://vuejs-dang-app-default-rtdb.firebaseio.com/coaches/${id}.json?auth=${token}`, {
             method: 'PUT',
             body: JSON.stringify(coachData),
         });

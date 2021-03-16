@@ -25,7 +25,8 @@ export default {
     },
     async fetchRequests(context) {
         const userId = context.rootGetters.userId;
-        const response = await fetch(`https://vuejs-dang-app-default-rtdb.firebaseio.com/requests/${userId}.json`);
+        const token = context.rootGetters.getToken;
+        const response = await fetch(`https://vuejs-dang-app-default-rtdb.firebaseio.com/requests/${userId}.json?auth=${token}`);
 
         const responseData = await response.json();
         if (!response.ok) {
