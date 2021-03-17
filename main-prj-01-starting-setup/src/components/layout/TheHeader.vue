@@ -6,6 +6,7 @@
         <li><router-link to="/coaches">All Coaches</router-link></li>
         <li v-if="isLogedIn"><router-link to="/requests">Request</router-link></li>
         <li v-else><router-link to="/auth">LogIn</router-link></li>
+        <li v-if="isLogedIn"><base-button @click="logOut">LogOut</base-button></li>
       </ul>
     </nav>
   </header>
@@ -16,6 +17,12 @@ export default {
   computed: {
     isLogedIn() {
       return this.$store.getters.isAuthenticated;
+    },
+  },
+  methods:{
+    logOut(){
+      this.$store.dispatch('logOut');
+      this.$router.replace('/coaches');
     },
   },
 };

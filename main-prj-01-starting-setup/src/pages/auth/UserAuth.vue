@@ -79,15 +79,19 @@ export default {
             email: this.email,
             password: this.password,
           });
+          const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+          this.$router.replace(redirectUrl);
         } catch (error) {
           this.error = error.message || 'Something went wrong!!';
         }
       } else {
-         try {
+        try {
           await this.$store.dispatch('logIn', {
             email: this.email,
             password: this.password,
           });
+          const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+          this.$router.replace(redirectUrl);
         } catch (error) {
           this.error = error.message || 'Something went wrong!!';
         }
@@ -101,9 +105,9 @@ export default {
         this.mode = 'login';
       }
     },
-    handleError(){
+    handleError() {
       this.error = null;
-    }
+    },
   },
 };
 </script>

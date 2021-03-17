@@ -3,11 +3,11 @@ import actions from './actions'
 import mutations from './mutations'
 
 export default {
-    state(){
-        return{
+    state() {
+        return {
             userId: null,
             token: null,
-            tokenExpiration: null,
+            didAutoLogOut: false,
         };
     },
     mutations,
